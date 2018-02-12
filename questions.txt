@@ -1,0 +1,100 @@
+
+INSTRUCTIONS:
+- This homework should be completed in 2 hours and 30 minutes
+- Please send back all of your code
+- Of course you are free to use the internet or any other resource but please do NOT TALK TO ANYONE
+- We will execute your code for questions 1 through 3
+- Question 4 is more open, so we don't expect any working code, but please create all the relevant functions, define inputs and outputs, and provide a docstring describing what each function does. Feel free to add diagrams or tree structures that explain the different components of the application and how they relate to each other.
+- Hedge your bets: stuck somewhere? move on, come back if you have time
+- All questions have equal weight
+
+
+# =============================================================
+
+# 1. GENERAL PYTHON CODING: 
+#.   Given the folder baby_names (attached) which contains many files, each of which contains the popularity of children 
+#    names in a year (in the form Name,Gender,Count), write a function which gets a name as input and returns two lists
+#    of 2-tuples with Year, Count, for all years for which there is data, one list per gender.
+#    For example: get_popularity_trend('Benjamin') returns:
+#       [(2000, 14840), (2001, 14329), ...], [(2000, 12), (2001, 17), ...]
+#	The first list is for Benjamin for males, the second list is for Benjamin for females
+
+def get_popularity_trend(name):
+    # Make it happen
+    return None
+
+
+# =============================================================
+
+// 2. JAVASCRIPT
+// Write a basic function to check that the user has entered
+// a well-formed email address. Don't worry about being too
+// specific, it only has to pass the assertions below.
+// Uncomment the console.log() line below to check your work.
+
+function validateEmail(email) {
+  // TODO
+}
+
+const emails = [    // Expected results:
+  'test@test.com',  // true
+  'test@@test.com', // false
+  'test@test..com', // false
+  'test@test',      // false
+  '@test.com',      // false
+  'a@b.c',          // false
+  'a@b.co',         // true
+  '@.',             // false
+  'foo@bar123.com'  // true
+];
+
+(function() {
+  for (let i = 0; i < emails.length; i++) {
+    // console.log(validateEmail(emails[i]));
+  }
+}());
+
+
+
+# =============================================================
+
+# 3. PYTHON, DATABASES, AND QUERIES
+#    Write Python commands to create a database, add records, and write simple queries
+#    (You can use sqlalchemy or any Python module you need to connect to any DB of your choice)
+#    There is NO need for you to create the DB; we just want to see the code.
+
+from sqlalchemy import *
+
+
+class User(Object):
+    def __init__(self, name, age, gender):
+        self.name = name
+        self.age = age
+        self.gender = gender
+
+
+# Write the code to
+
+# a. Create a database to store the user objects described above
+
+# b. Add 3 or 4 users to the database
+
+# c. Retrieve all the users in the database
+
+# d. Retrieve all male users older than 40 years
+
+
+# =============================================================
+
+# 4. PYTHON, DJANGO (or FLASK) ARCHITECTURE QUESTION
+#    Given the following API endpoints that can be used to get data from a web service:
+#	taskid = requestTask(product, date_range, test_type) 	[requests the data and returns a taskid]
+#	task_ready = checkTaskStatus(taskid)			[checks whether the task is ready and returns True/False]
+#	binary_encoded_string = downloadData(taskid)		[download the data into a binary encoded string]
+#    Create the structure (building blocks) of a web application that allows users to request periodic data downloads of large (GB) data sets and plot some metric (based on the data) as a function of time. 
+#    - Each user will create her own Python data processing function, for example x, y = getDisplayFailures(daily_data), which will become part of the web app backend code.
+#    - The user function can only run on small data sets (say one day of data only) and runs in 30 minutes using 16 parallel processes.
+#    - The web application needs to store the processed data (say a few MB per day, per product per test type) for 3 years, but the raw downloaded data for 4 weeks only. 
+#    - The user expects that the tasks run offline so that she can view the daily results and the yearly trend daily while she drinks her tea.
+#    - This is an example of what a user might request: download IPhone X display data every day (1 Million rows per day, 3000 columns of data), run my function on the daily data to get the number of display failures per hour for that day, and plot the hourly failures for the last 6 months.
+#    Please provide as much detail as possible.
